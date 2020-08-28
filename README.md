@@ -21,3 +21,4 @@ Multi Options is a simple plugin that will help you on your server and facilitat
 ## Quick Links
 * [Spigot Page][spigot]
 * [Plugin Statistics](https://bstats.org/plugin/bukkit/MultiOptions/4583)
+* [Wiki](https://github.com/jonagamerpro1234/MultiOptions/wiki)
