@@ -10,6 +10,9 @@
 
 [![MultiOptions]][spigot]
 
+[Imgur](https://i.imgur.com/soEYpzf.mp4)
+
+
 [![releasesImg]][releases] [![licenseImg]][license]
 
 ## Description
