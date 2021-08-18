@@ -1,0 +1,22 @@
+name: MultiOptions
+version: 4.0.0
+main: jss.multioptions.MultiOptions
+api-version: 1.13
+description: A plugin with multiple options that will help you on your server according to the option you need
+prefix: MultiOptions
+softdepend: [placehodlerAPI,Vault,Essentials]
+website: https://www.spigotmc.org/resources/multi-options-1-7-x-1-16-x.53655/
+
+commands:
+  MultiOptions:
+    aliases:
+      - mo
+permission:
+  MultiOptions.*:
+    description: give all permissions
+    children:
+      MultiOptions.Admin: true
+    default: op
+  MultiOptions.Admin:
+    description: ---
+    default: op
