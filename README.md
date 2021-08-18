@@ -18,6 +18,12 @@
 ## Description
 Multi Options is a simple plugin that will help you on your server and facilitates the customization and progress of your server with the multiple options that it brings
 
+## Installation
+* download the plugin
+* you turn off your server so that no error occurs
+* drag the plugin into the plugins folder of your server
+* you turn on the server and it would be ready
+
 ## Support
 * [Issue Tracker](https://github.com/jonagamerpro1234/MultiOptions/issues)
 * [Discord](https://discord.gg/c5GhQDQCK5)
