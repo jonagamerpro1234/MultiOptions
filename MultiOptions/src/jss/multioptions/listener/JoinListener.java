@@ -9,9 +9,9 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import jss.multioptions.MultiOptions;
+import jss.multioptions.config.Settings;
 import jss.multioptions.manager.EventManager;
 import jss.multioptions.utils.EventUtils;
-import jss.multioptions.utils.Settings;
 import jss.multioptions.utils.Utils;
 
 public class JoinListener implements Listener{

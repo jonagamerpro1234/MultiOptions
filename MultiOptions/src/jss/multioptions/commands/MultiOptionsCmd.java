@@ -7,11 +7,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import jss.multioptions.ConfigFile;
-import jss.multioptions.MessagesFile;
 import jss.multioptions.MultiOptions;
+import jss.multioptions.config.Settings;
+import jss.multioptions.config.file.ConfigFile;
+import jss.multioptions.config.file.MessagesFile;
 import jss.multioptions.utils.EventUtils;
-import jss.multioptions.utils.Settings;
 import jss.multioptions.utils.Utils;
 
 public class MultiOptionsCmd implements CommandExecutor {

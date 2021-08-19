@@ -1,4 +1,4 @@
-package jss.multioptions;
+package jss.multioptions.config.file;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,8 +10,9 @@ import java.io.UnsupportedEncodingException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import jss.multioptions.MultiOptions;
+import jss.multioptions.config.FileManager;
 import jss.multioptions.utils.EventUtils;
-import jss.multioptions.utils.FileManager;
 import jss.multioptions.utils.Utils;
 import jss.multioptions.utils.interfaces.FileHelper;
 

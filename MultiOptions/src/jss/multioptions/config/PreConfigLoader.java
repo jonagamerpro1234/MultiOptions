@@ -1,10 +1,10 @@
-package jss.multioptions;
+package jss.multioptions.config;
 
 import java.util.List;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-import jss.multioptions.utils.Settings;
+import jss.multioptions.MultiOptions;
 
 public class PreConfigLoader {
 	

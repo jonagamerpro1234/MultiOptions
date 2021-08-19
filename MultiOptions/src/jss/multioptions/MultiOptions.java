@@ -2,8 +2,13 @@ package jss.multioptions;
 
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import jss.multioptions.config.FileManager;
+import jss.multioptions.config.PreConfigLoader;
+import jss.multioptions.config.file.ConfigFile;
+import jss.multioptions.config.file.MessagesFile;
+import jss.multioptions.config.file.WorldDataFile;
 import jss.multioptions.hook.HooksManager;
-import jss.multioptions.utils.FileManager;
 import jss.multioptions.utils.Logger;
 import jss.multioptions.utils.Logger.Level;
 import jss.multioptions.utils.UpdateChecker;

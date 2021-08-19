@@ -1,4 +1,4 @@
-package jss.multioptions.utils;
+package jss.multioptions.config;
 
 import java.util.List;
 

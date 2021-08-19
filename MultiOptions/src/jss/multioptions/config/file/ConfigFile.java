@@ -1,4 +1,4 @@
-package jss.multioptions;
+package jss.multioptions.config.file;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,20 +10,21 @@ import java.io.UnsupportedEncodingException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import jss.multioptions.MultiOptions;
+import jss.multioptions.config.FileManager;
 import jss.multioptions.utils.EventUtils;
-import jss.multioptions.utils.FileManager;
 import jss.multioptions.utils.Utils;
 import jss.multioptions.utils.interfaces.FileHelper;
 
-public class MessagesFile extends FileManager implements FileHelper  {
+public class ConfigFile extends FileManager implements FileHelper {
 
 	private MultiOptions plugin;
 	private EventUtils eventUtils = new EventUtils(plugin);
 	private File file;
 	private FileConfiguration config;
-	private String path = "messages.yml";
+	private String path = "config.yml";
 	
-	public MessagesFile(MultiOptions plugin) {
+	public ConfigFile(MultiOptions plugin) {
 		super(plugin);
 		this.plugin = plugin;
 		this.file = null;
@@ -36,7 +37,11 @@ public class MessagesFile extends FileManager implements FileHelper  {
 			getConfig().options().copyDefaults(true);
 			saveConfig();
 		}
-		Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + "&5 <|| &c* &7Loading &d[&bMessages.yml&d]");
+		if(getConfig().getString("Settings.Debug").equals("true")) {
+			Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + "&5 <|| &c* &eDebug Mode: &bLoad config.yml");
+		}else {
+			Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + "&5 <|| &c* &7Loading &d[&bConfig.yml&d]");
+		}
 	}
 
 	public FileConfiguration getConfig() {

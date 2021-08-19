@@ -7,7 +7,7 @@ import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import jss.multioptions.MultiOptions;
-import jss.multioptions.utils.InventoryPlayerUtils;
+import jss.multioptions.utils.InventoryView;
 import jss.multioptions.utils.InventoryUtils;
 import jss.multioptions.utils.ItemUtils;
 import jss.multioptions.utils.Utils;
@@ -15,7 +15,7 @@ import jss.multioptions.utils.Utils;
 public class InventoryManager {
 	
 	private ArrayList<InventoryUtils> inventoryUtils = new ArrayList<>();
-	private ArrayList<InventoryPlayerUtils> playerUtils = new ArrayList<>();
+	private ArrayList<InventoryView> playerUtils = new ArrayList<>();
 	public InventoryManager(MultiOptions plugin) {
 	}
 
@@ -38,10 +38,10 @@ public class InventoryManager {
 		this.inventoryUtils = inventoryUtils;
 	}
 
-	public InventoryPlayerUtils getPlayerUtils(Player player) {
-		Iterator<InventoryPlayerUtils> iterator = playerUtils.iterator();
+	public InventoryView getPlayerUtils(Player player) {
+		Iterator<InventoryView> iterator = playerUtils.iterator();
 		while(iterator.hasNext()) {
-			InventoryPlayerUtils p = (InventoryPlayerUtils)iterator.next();
+			InventoryView p = (InventoryView)iterator.next();
 			if(player.getName().equals(p.getPlayer().getName())) {
 				return p;
 			}
@@ -50,12 +50,12 @@ public class InventoryManager {
 	}
 
 	public void setPlayerUtils(Player player, String inventory) {
-		this.playerUtils.add(new InventoryPlayerUtils(inventory, player));
+		this.playerUtils.add(new InventoryView(inventory, player));
 	}
 	
 	public boolean removePlayerUtils(String name) {
 		for(int i = 0; i < playerUtils.size(); i++) {
-			if(((InventoryPlayerUtils)this.playerUtils.get(i)).getPlayer().getName().equals(name)) {
+			if(((InventoryView)this.playerUtils.get(i)).getPlayer().getName().equals(name)) {
 				this.playerUtils.remove(i);
 				return true;
 			}

@@ -9,8 +9,35 @@ website: https://www.spigotmc.org/resources/multi-options-1-7-x-1-16-x.53655/
 
 commands:
   MultiOptions:
+    description: the main command
     aliases:
       - mo
+  MFly:
+    description: ---
+    aliases:
+      - fly
+  MGamemode:
+    description: ---
+    aliases:
+      - gamemode
+      - gm
+  MLobby:
+    description: ---
+    aliases:
+      - lobby
+      - hub
+  MFeed:
+    description: ---
+    aliases:
+      - feed
+  MHeal:
+    description: ---
+    aliases:
+      - heal
+  MWarp:
+    description: ---
+    aliases:
+      - warp
 permission:
   MultiOptions.*:
     description: give all permissions
