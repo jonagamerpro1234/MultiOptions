@@ -14,6 +14,7 @@ import jss.multioptions.MultiOptions;
 import jss.multioptions.config.FileManager;
 import jss.multioptions.utils.EventUtils;
 import jss.multioptions.utils.Utils;
+import jss.multioptions.utils.Logger.Level;
 import jss.multioptions.utils.interfaces.FileHelper;
 
 public class ConfigFile extends FileManager implements FileHelper {
@@ -40,7 +41,7 @@ public class ConfigFile extends FileManager implements FileHelper {
 		if(getConfig().getString("Settings.Debug").equals("true")) {
 			Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + "&5 <|| &c* &eDebug Mode: &bLoad config.yml");
 		}else {
-			Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + "&5 <|| &c* &7Loading &d[&bConfig.yml&d]");
+			plugin.logger.Log(Level.INFO, "&bLoading Config File...");
 		}
 	}
 

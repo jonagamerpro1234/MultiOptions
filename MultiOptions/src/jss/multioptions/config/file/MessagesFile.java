@@ -12,14 +12,12 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import jss.multioptions.MultiOptions;
 import jss.multioptions.config.FileManager;
-import jss.multioptions.utils.EventUtils;
-import jss.multioptions.utils.Utils;
+import jss.multioptions.utils.Logger.Level;
 import jss.multioptions.utils.interfaces.FileHelper;
 
 public class MessagesFile extends FileManager implements FileHelper  {
 
 	private MultiOptions plugin;
-	private EventUtils eventUtils = new EventUtils(plugin);
 	private File file;
 	private FileConfiguration config;
 	private String path = "messages.yml";
@@ -37,7 +35,7 @@ public class MessagesFile extends FileManager implements FileHelper  {
 			getConfig().options().copyDefaults(true);
 			saveConfig();
 		}
-		Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + "&5 <|| &c* &7Loading &d[&bMessages.yml&d]");
+		plugin.logger.Log(Level.INFO, "&bLoading Messages File...");
 	}
 
 	public FileConfiguration getConfig() {

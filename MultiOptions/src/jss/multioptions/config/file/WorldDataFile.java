@@ -12,14 +12,12 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import jss.multioptions.MultiOptions;
 import jss.multioptions.config.FileManager;
-import jss.multioptions.utils.EventUtils;
-import jss.multioptions.utils.Utils;
+import jss.multioptions.utils.Logger.Level;
 import jss.multioptions.utils.interfaces.FileHelper;
 
 public class WorldDataFile extends FileManager implements FileHelper{
 	
 	private MultiOptions plugin;
-	private EventUtils eventUtils = new EventUtils(plugin);
 	private File file;
 	private FileConfiguration config;
 	private String path = "worlds.yml";
@@ -38,9 +36,9 @@ public class WorldDataFile extends FileManager implements FileHelper{
 			saveConfig();
 		}
 		if(plugin.getConfigFile().getConfig().getString("Settings.Debug").equals("true")) {
-			Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + "&5 <|| &c* &eDebug Mode: &bLoad worlds.yml");
+			plugin.logger.Log(Level.DEBUG, "&bLoading Worlds File...");
 		}else {
-			Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + "&5 <|| &c* &7Loading &d[&bworlds.yml&d]");
+			plugin.logger.Log(Level.INFO, "&bLoading Worlds File...");
 		}
 	}
 

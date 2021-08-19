@@ -10,19 +10,16 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import jss.multioptions.MultiOptions;
 import jss.multioptions.config.Settings;
-import jss.multioptions.manager.EventManager;
 import jss.multioptions.utils.EventUtils;
 import jss.multioptions.utils.Utils;
 
 public class JoinListener implements Listener{
-
-	private EventManager eventManager;
-	private MultiOptions plugin = eventManager.getPlugin();
+	private MultiOptions plugin;
 	private EventUtils eventUtils = new EventUtils(plugin);
 	
-	public JoinListener(EventManager eventManager) {
-		this.eventManager = eventManager;
-		Utils.sendColorMessage(eventUtils.getConsoleSender(), "&bTest eventUtils: AddEventList: onJoin");
+	public JoinListener(MultiOptions plugin) {
+		this.plugin = plugin;
+		Utils.sendColorMessage(eventUtils.getConsoleSender(), "&bTest EventManager: Loading JoinListener");
 	}
 	
 	public void onUpdate() {
