@@ -1,7 +1,6 @@
 package jss.multioptions;
 
-import org.bukkit.Bukkit;
-import org.bukkit.event.Listener;
+
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -17,6 +16,7 @@ import jss.multioptions.utils.Logger.Level;
 import jss.multioptions.utils.UpdateChecker;
 import jss.multioptions.utils.UpdateSettings;
 import jss.multioptions.utils.Utils;
+import jss.multioptions.commands.MultiOptionsCmd;
 
 public class MultiOptions extends JavaPlugin {
 
@@ -54,7 +54,7 @@ public class MultiOptions extends JavaPlugin {
 		messagesFile.create();		
 		worldDataFile.create();
 		plugin.logger.Log(Level.INFO, "&bLoading hooks...");
-		onEvents();
+		
 		this.hooksManager.load();
 		new UpdateChecker(this, UpdateSettings.ID[0]).getUpdateVersion(version -> {
             if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
@@ -78,14 +78,12 @@ public class MultiOptions extends JavaPlugin {
 		metrics = null;
 	}
 	
-	public void onEvents() {
-		initEvent(new JoinListener(this));
+	public void onLoadCommands() {
+		new MultiOptionsCmd(this);
 	}
-
-	private void initEvent(Listener... listeners) {
-		for(Listener listener : listeners) {
-			Bukkit.getPluginManager().registerEvents(listener, this);
-		}
+	
+	public void onLoadEvents() {
+		new JoinListener(this);
 	}
 	
 	public ConfigFile getConfigFile() {

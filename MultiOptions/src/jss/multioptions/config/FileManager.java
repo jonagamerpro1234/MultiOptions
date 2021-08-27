@@ -12,7 +12,6 @@ public class FileManager {
 	private MultiOptions plugin;
 	
 	public FileManager(MultiOptions plugin) {
-		super();
 		this.plugin = plugin;
 	}
 

@@ -19,17 +19,9 @@ public class MultiOptionsCmd implements CommandExecutor {
 	private MultiOptions plugin;
 	private EventUtils eventUtils = new EventUtils(plugin);
 	
-	public MultiOptionsCmd(MultiOptions plugin, ConfigFile configFile) {
+	public MultiOptionsCmd(MultiOptions plugin) {
 		this.plugin = plugin;
 		plugin.getCommand("MultiOptions").setExecutor(this);
-		if(configFile.getConfig().getString("Settings.Debug").equals("true")) {
-			Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + "&5 <|| &c* &eDebug Mode: &bLoad MultiOptionsCommand");
-			Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + "&5 <|| &c* &eDebug Mode:  &e&bLoad Sub Commands:");
-			Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + "&5 <|| &c* &eDebug Mode:    &b>> &aReload");
-			Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + "&5 <|| &c* &eDebug Mode:    &b>> &aHelp");
-		}else {
-			Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + "&5 <|| &c* &7Loading &d[&bMultiOptionsCommand&d]");
-		}
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

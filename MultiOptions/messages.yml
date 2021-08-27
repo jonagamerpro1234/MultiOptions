@@ -1,9 +1,9 @@
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-# |▌▐|▌                        ▌|▌▐|
-# |▌▐|▌ ●    MultiOption       ▌|▌▐|
-# |▌▐|▌ ● By jonagamerpro1234  ▌|▌▐| 
-# |▌▐|▌ ●   Vesion 4.0.0       ▌|▌▐|
-# |▌▐|▌                        ▌|▌▐|
+# |▌▐|▌                        ▐|▌▐|
+# |▌▐|▌ ●    MultiOption       ▐|▌▐|
+# |▌▐|▌ ● By jonagamerpro1234  ▐|▌▐| 
+# |▌▐|▌ ●   Vesion 4.0.0       ▐|▌▐|
+# |▌▐|▌                        ▐|▌▐|
 # ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 #
 # |> Here you can customize the messages of the plugin,
@@ -51,13 +51,16 @@ Help-Messages:
       - '&5> &b/Mo &eLobby &dSetDefaultLobby &7set the main lobby'
       - '&5> &b/Mo &eLobby &dRemoveDefaultLobby &7remove the main lobby'
       - '&5> &b/Mo &eReload &d[&aConfig&8|&aWorlds&8|&aLocale&8|&aAll&d] &7reloads plugin files but sometimes a server restart is needed'
+      - '&5> &b/Mo &eInfo &7show plugin information'
+      - '&5> &b/Mo &eAdmin'
+  Page-2:
+      - '&5> &b/Gamemode &8| &9Gm &6<Player name> &7change your game mode and also that of other players'
       - '&5> &b/Lobby &8| &9 /Hub &6<Lobby name> &7 makes you tp to the main lobby, but also to the sublobby'
       - '&5> &b/ClearChat &8| &9/Cc &7 you can clean the chat manually or wait for it to clean automatically'
       - '&5> &b/MFly &8| &9/Fly &6<Player name> &7lets you fly'
-  Page-2:
-      - '&5> &b/Gamemode &8| &9Gm &6<Player name> &7change your game mode and also that of other players'
-      - '&5> &b/Mo &eInfo &7show plugin information'
-      - '&5> &b/'
-      - '&5> &b/'
-      - '&5> &b/'  
+      - '&5> &b/MDay &8| &9/Day'
+      - '&5> &b/MNight &8| &9/Night'
+      - '&5> &b/MSun &8| &9/Sun'
+      - '&5> &b/MRain &8| &9/Rain'
+      - '&5> &b/MStorm &8| &9/Storm'
   
