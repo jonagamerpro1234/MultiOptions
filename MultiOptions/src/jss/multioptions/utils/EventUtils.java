@@ -28,6 +28,10 @@ public class EventUtils {
 		return Bukkit.getConsoleSender();
 	}
 	
+	public static ConsoleCommandSender getStaticConsoleSender() {
+		return Bukkit.getConsoleSender();
+	}
+	
 	@SuppressWarnings("unused")
 	public boolean getClearChatAction(Object object, String type) {
 		String tmp = type;

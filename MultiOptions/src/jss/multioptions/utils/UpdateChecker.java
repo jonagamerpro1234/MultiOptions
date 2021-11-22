@@ -15,7 +15,7 @@ import jss.multioptions.utils.interfaces.UpdateHelper;
 public class UpdateChecker implements UpdateHelper{
 
 	private MultiOptions plugin;
-	private Logger logger = new Logger(plugin);
+	private Logger logger = new Logger();
 	private int ID;
 	
 	public UpdateChecker(MultiOptions plugin, int iD) {

@@ -1,6 +1,5 @@
 package jss.multioptions;
 
-
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -11,6 +10,7 @@ import jss.multioptions.config.file.MessagesFile;
 import jss.multioptions.config.file.WorldDataFile;
 import jss.multioptions.hook.HooksManager;
 import jss.multioptions.listener.JoinListener;
+import jss.multioptions.modules.ModulesLoader;
 import jss.multioptions.utils.Logger;
 import jss.multioptions.utils.Logger.Level;
 import jss.multioptions.utils.UpdateChecker;
@@ -25,6 +25,7 @@ public class MultiOptions extends JavaPlugin {
 	private PreConfigLoader preConfigLoader = new PreConfigLoader(this);
 	private FileManager fileManager = new FileManager(this);
 	private HooksManager hooksManager = new HooksManager(this);
+	private ModulesLoader modulesLoader = new ModulesLoader(this);
 	private ConfigFile configFile = new ConfigFile(this);
 	private MessagesFile messagesFile = new MessagesFile(this);
 	private WorldDataFile worldDataFile = new WorldDataFile(this);
@@ -34,7 +35,7 @@ public class MultiOptions extends JavaPlugin {
 	public boolean ess = false;
 	public boolean vault = false;
 	public Metrics metrics;
-	public Logger logger = new Logger(this);
+	public Logger logger = new Logger();
 	
 	public void onEnable() {
 		Utils.setEnabled(version);
@@ -55,13 +56,14 @@ public class MultiOptions extends JavaPlugin {
 		worldDataFile.create();
 		plugin.logger.Log(Level.INFO, "&bLoading hooks...");
 		
+		this.modulesLoader.getLoader();
 		this.hooksManager.load();
 		new UpdateChecker(this, UpdateSettings.ID[0]).getUpdateVersion(version -> {
             if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
                 logger.Log(Level.SUCCESS, "&a" + this.name + " is up to date!");
             } else {
                 logger.Log(Level.OUTLINE, "&5<||" + Utils.getLine("&5"));
-                logger.Log(Level.WARNING, "&5<||" + "&b" + this.name + "is outdated!");
+                logger.Log(Level.WARNING, "&5<||" + "&b" + this.name + " is outdated!");
                 logger.Log(Level.WARNING, "&5<||" + "&bNewest version: &a" + version);
                 logger.Log(Level.WARNING, "&5<||" + "&bYour version: &d" + UpdateSettings.VERSION);
                 logger.Log(Level.WARNING, "&5<||" + "&bUpdate Here on Spigot: &e" + UpdateSettings.URL_PLUGIN[0]);

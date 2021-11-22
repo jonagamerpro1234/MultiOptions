@@ -16,11 +16,11 @@ public class PreConfigLoader {
 	public void load() {
 		try {
 			Settings.boolean_update = getString("config", "Settings.Update").equals("true");
-			Settings.boolean_join = getString("config", "Join.Enabled").equals("true");
-			Settings.boolean_join_none = getString("config", "Join.Enabled").equals("none");
-			Settings.boolean_welcome = getString("config", "Welcome.Enabled").equals("true");
-			Settings.message_join = getString("config", "Join.Text");
-			Settings.message_welcomelist = getStringList("config", "Welcome.Text");
+			//Settings.boolean_join = getString("config", "Join.Enabled").equals("true");
+			//Settings.boolean_join_none = getString("config", "Join.Enabled").equals("none");
+			//Settings.boolean_welcome = getString("config", "Welcome.Enabled").equals("true");
+			//Settings.message_join = getString("config", "Join.Text");
+			//Settings.message_welcomelist = getStringList("config", "Welcome.Text");
 			Settings.message_helpcmd = getString("message","Help-Message");
 			Settings.message_helplist1 = getStringList("message","Help-Messages.Page-1");
 			Settings.message_helplist2 = getStringList("message","Help-Messages.Page-2");
@@ -30,6 +30,8 @@ public class PreConfigLoader {
 			Settings.message_errornumberformat = getString("message","Error-NumberFormat");
 			Settings.message_nopermission = getString("message","No-Permission");
 			Settings.message_nopermissionlabel = getString("message","No-Permission-Hover");
+			Settings.module_gamemode = getBoolean("config", "Settings.Modules.Gamemode");
+			
 		}catch(NullPointerException e) {
 			e.printStackTrace();
 		}

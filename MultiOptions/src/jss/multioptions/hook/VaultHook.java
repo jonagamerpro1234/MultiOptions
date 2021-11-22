@@ -3,25 +3,20 @@ package jss.multioptions.hook;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 
-import jss.multioptions.MultiOptions;
 import jss.multioptions.utils.EventUtils;
 import jss.multioptions.utils.Logger;
-import jss.multioptions.utils.Logger.Level;
 import jss.multioptions.utils.Utils;
 import jss.multioptions.utils.interfaces.LoaderHook;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
-@SuppressWarnings("unused")
+
 public class VaultHook implements LoaderHook {
 
-	private MultiOptions plugin;
 	private HooksManager hooksManager;
-	private EventUtils eventUtils = new EventUtils(plugin);
-	private Logger logger = new Logger(plugin);
-	public Permission permission;
-	public Chat chat;
-	public Economy economy;
+	public static Permission permission;
+	public static Chat chat;
+	public static Economy economy;
 
 	public VaultHook(HooksManager hooksManager) {
 		this.hooksManager = hooksManager;
@@ -29,11 +24,11 @@ public class VaultHook implements LoaderHook {
 
 	public void load() {
 		if(!Bukkit.getPluginManager().isPluginEnabled("Vault")) {
-			logger.Log(Level.WARNING, "vault not enabled! - Disable Features...");
+			Logger.warning("vault not enabled! - Disable Features...");
 			return;
 		}
 		
-		Utils.sendColorMessage(eventUtils.getConsoleSender(), Utils.getPrefix() + " " + "&aLoading vault features...");
+		Utils.sendColorMessage(EventUtils.getStaticConsoleSender(), Utils.getPrefix() + " " + "&aLoading vault features...");
 		RegisteredServiceProvider<Economy> rspE = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
 		RegisteredServiceProvider<Permission> rspP = Bukkit.getServer().getServicesManager().getRegistration(Permission.class);
 		RegisteredServiceProvider<Chat> rspC = Bukkit.getServer().getServicesManager().getRegistration(Chat.class);
@@ -49,15 +44,19 @@ public class VaultHook implements LoaderHook {
 		}
 	}
 	
-	public Economy getEconomy() {
+	public static Economy getEconomy() {
 		return economy;
 	}
 
-	public Permission getPermissions() {
+	public static Permission getPermissions() {
 		return permission;
 	}
 
-	public Chat getChat() {
+	public static Chat getChat() {
 		return chat;
+	}
+	
+	public HooksManager getHooksManager() {
+		return hooksManager;
 	}
 }

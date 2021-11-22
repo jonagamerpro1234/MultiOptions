@@ -1,16 +1,8 @@
 package jss.multioptions.utils;
 
-import jss.multioptions.MultiOptions;
-
 public class Logger {
 
-    private MultiOptions plugin;
-    private EventUtils eventsUtils = new EventUtils(plugin);
-
-    public Logger(MultiOptions plugin) {
-        super();
-        this.plugin = plugin;
-    }
+	public Logger() {}
 
     public void Log(Level level, Object object) {
         if (object == null) {
@@ -18,22 +10,22 @@ public class Logger {
         }
         switch (level) {
             case ERROR:
-                Utils.sendColorMessage(eventsUtils.getConsoleSender(), "&e[&cERROR&e]&7" + " " + object);
+                error(object);
                 break;
             case WARNING:
-                Utils.sendColorMessage(eventsUtils.getConsoleSender(), "&e[&dWARNING&e]&7" + " " + object);
+            	warning(object);
                 break;
             case INFO:
-                Utils.sendColorMessage(eventsUtils.getConsoleSender(), "&e[&9INFO&e]&7" + " " + object);
+                info(object);
                 break;
             case OUTLINE:
-                Utils.sendColorMessage(eventsUtils.getConsoleSender(), "&e[&bOUTLINE&e]&7" + " " + object);
+                outline(object);
                 break;
             case SUCCESS:
-                Utils.sendColorMessage(eventsUtils.getConsoleSender(), "&e[&aSUCCESS&e]&7" + " " + object);
+                success(object);
                 break;
             case DEBUG:
-                Utils.sendColorMessage(eventsUtils.getConsoleSender(), "&e[&dDEBUG&e]&7" + " " + object);
+            	debug(object);
                 break;
         }
     }
@@ -44,25 +36,73 @@ public class Logger {
         }
         switch (level) {
             case ERROR:
-                Utils.sendColorMessage(eventsUtils.getConsoleSender(), "&e[&cERROR&e]&7" + " " + msg);
+                error(msg);
                 break;
             case WARNING:
-                Utils.sendColorMessage(eventsUtils.getConsoleSender(), "&e[&dWARNING&e]&7" + " " + msg);
+                warning(msg);
                 break;
             case INFO:
-                Utils.sendColorMessage(eventsUtils.getConsoleSender(), "&e[&9INFO&e]&7" + " " + msg);
+                info(msg);
                 break;
             case OUTLINE:
-                Utils.sendColorMessage(eventsUtils.getConsoleSender(), "&e[&bOUTLINE&e]&7" + " " + msg);
+                outline(msg);
                 break;
             case SUCCESS:
-                Utils.sendColorMessage(eventsUtils.getConsoleSender(), "&e[&aSUCCESS&e]&7" + " " + msg);
+                success(msg);
                 break;
             case DEBUG:
-                Utils.sendColorMessage(eventsUtils.getConsoleSender(), "&e[&dDEBUG&e]&7" + " " + msg);
+            	debug(msg);
                 break;
         }
 
+    }
+    
+    public static void warning(String msg) {
+    	Utils.sendColorMessage(EventUtils.getStaticConsoleSender(), Utils.getPrefix() + " -> &e[&dWARNING&e]&7" + " " + msg);
+    }
+    
+    public static void success(String msg) {
+    	Utils.sendColorMessage(EventUtils.getStaticConsoleSender(), Utils.getPrefix() + " -> &e[&aSUCCESS&e]&7" + " " + msg);
+    }
+    
+    public static void error(String msg) {
+    	Utils.sendColorMessage(EventUtils.getStaticConsoleSender(), Utils.getPrefix() + " -> &e[&cERROR&e]&7" + " " + msg);
+    }
+    
+    public static void debug(String msg) {
+    	Utils.sendColorMessage(EventUtils.getStaticConsoleSender(), Utils.getPrefix() + " -> &e&e[&dDEBUG&e]&7" + " " + msg);
+    }
+    
+    public static void info(String msg) {
+    	Utils.sendColorMessage(EventUtils.getStaticConsoleSender(), Utils.getPrefix() + " -> &e[&9INFO&e]&7" + " " + msg);
+    }
+    
+    public static void outline(String msg) {
+    	Utils.sendColorMessage(EventUtils.getStaticConsoleSender(), Utils.getPrefix() + " -> &e[&bOUTLINE&e]&7" + " " + msg);
+    }
+    
+    public static void warning(Object object) {
+    	Utils.sendColorMessage(EventUtils.getStaticConsoleSender(), Utils.getPrefix() + " -> &e[&dWARNING&e]&7" + " " + object);
+    }
+    
+    public static void success(Object object) {
+    	Utils.sendColorMessage(EventUtils.getStaticConsoleSender(), Utils.getPrefix() + " -> &e[&aSUCCESS&e]&7" + " " + object);
+    }
+    
+    public static void error(Object object) {
+    	Utils.sendColorMessage(EventUtils.getStaticConsoleSender(), Utils.getPrefix() + " -> &e[&cERROR&e]&7" + " " + object);
+    }
+    
+    public static void debug(Object object) {
+    	Utils.sendColorMessage(EventUtils.getStaticConsoleSender(), Utils.getPrefix() + " -> &e&e[&dDEBUG&e]&7" + " " + object);
+    }
+    
+    public static void info(Object object) {
+    	Utils.sendColorMessage(EventUtils.getStaticConsoleSender(), Utils.getPrefix() + " -> &e[&9INFO&e]&7" + " " + object);
+    }
+    
+    public static void outline(Object object) {
+    	Utils.sendColorMessage(EventUtils.getStaticConsoleSender(), Utils.getPrefix() + " -> &e[&bOUTLINE&e]&7" + " " + object);
     }
 	
 	public enum Level{

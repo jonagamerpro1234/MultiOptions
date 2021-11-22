@@ -3,7 +3,6 @@ package jss.multioptions.commands.gamemode;
 import java.util.ArrayList;
 import java.util.List;
 import jss.multioptions.MultiOptions;
-import jss.multioptions.utils.EventUtils;
 import jss.multioptions.utils.Utils;
 
 import org.bukkit.Bukkit;

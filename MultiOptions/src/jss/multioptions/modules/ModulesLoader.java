@@ -1,6 +1,15 @@
 package jss.multioptions.modules;
 
+import jss.multioptions.MultiOptions;
+import jss.multioptions.commands.gamemode.GameModeModule;
+
 public class ModulesLoader {
+	
+	private MultiOptions plugin;
+	
+	public ModulesLoader(MultiOptions plugin) {
+		this.plugin = plugin;
+	}	
 	
 	private void init(Module... modules) {
 		for(Module module : modules) {
@@ -9,6 +18,9 @@ public class ModulesLoader {
 	}
 	
 	public void getLoader() {
-		init();
+		init(
+				new GameModeModule(plugin)
+				
+				);
 	}
 }
