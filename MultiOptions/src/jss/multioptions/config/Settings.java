@@ -53,5 +53,10 @@ public class Settings {
 	public static boolean boolean_quit;
 	public static boolean boolean_quit_none;
 	public static boolean boolean_update;
+	public static boolean module_gamemode;
+	public static boolean module_lobby;
+	public static boolean module_warp;
+	public static boolean module_fly;
+	public static boolean module_;
 	
 }

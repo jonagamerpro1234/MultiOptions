@@ -1,71 +1,154 @@
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-# |▌▐|▌                        ▌|▌▐|
-# |▌▐|▌ ●    MultiOption       ▌|▌▐|
-# |▌▐|▌ ● By jonagamerpro1234  ▌|▌▐| 
-# |▌▐|▌ ●   Vesion 4.0.0       ▌|▌▐|
-# |▌▐|▌                        ▌|▌▐|
+# |▌▐|▌                        ▐|▌▐|
+# |▌▐|▌ ●    MultiOption       ▐|▌▐|
+# |▌▐|▌ ● By jonagamerpro1234  ▐|▌▐| 
+# |▌▐|▌ ●   Vesion 4.0.0       ▐|▌▐|
+# |▌▐|▌                        ▐|▌▐|
 # ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 #
+# ● MultiOptions is a simple plugin that will help you on your server and facilitates the customization and progress of your server with the multiple options that it brings
 #
-# | Settings |
+# ● GitHub: https://github.com/jonagamerpro1234/MultiOptions
+# ● Spigot: https://www.spigotmc.org/resources/53655/
+# ● Discord: https://discord.gg/c5GhQDQCK5
+# ● Bstast: https://bstats.org/plugin/bukkit/MultiOptions/4583
+# ● Wiki: !comming soon!
 #
 Settings:
+  
+  #
+  Config-Version: 1
+  
+  #
   Debug: false
+  
+  #
   Prefix: '&e[&bMy Server&e]&7'
+  
+  #
   Use-Default-Prefix: true
+  
+  #
   Update: true
-  ClearChat:
-    AutoClear: 
-      Enabled: true
-      Tick: 24000
+  
+  Modules:
+    
+    Fly: true
+    
+    Lobby: true
+    
+    Warps: true
+    
+    Vanish: true
+  
+    Gamemode: true
 #
-# | Join and Quit |
 #
-Join:
+Vanish:
+  
+  #
   Enabled: true
-  Text: '&3[&a+&3] &e<displayname> &7entered the server'
-  Use-Permission: false
-  Permission: 'my.server.join'
-  Type: normal
-  HoverEvent:
-    Text:
-      -
-    Type: text
-  ClickEvent:
-    Action: 'give <name> minecraft:diamonds 1'
-    Type: cmd
-Quit:
+  
+  #
+  Silent-Join: false
+  
+  #
+  Show-Potion-Effect: true
+#
+#
+Spawn:
+  
+  #
   Enabled: true
-  Text: '&3[&c-&3] &e<displayname> &7left the server'
-  Use-Permission: false
-  Permission: 'my.server.join'
-  Type: normal
-  HoverEvent:
-    Text: ''
-    Type: text
-  ClickEvent:
-    Action: 'give <name> minecraft:diamonds 1'
-    Type: cmd
+  
+  #
+  Use-Blindness: false
+  
+  #
+  Cooldown: 5
+  
+  #
+  Requiered-Permission: false
 #
-# | Welcome or Motd |
-#
-Welcome:
+#  
+Warps:
+  
+  #
   Enabled: true
-  Text:
-    - '&b&m=========================================&r'
-    - '<0>'
-    - '&e> &7Welcome To The Server &b<name>'
-    - '<0>'
-    - '&e> &cShop: shop-example.com'
-    - '&e> &7Use &b/skin to put on a skin'
-    - '<0>'
-    - '&b&m=========================================&r'
+  
+  #
+  Cooldown: 5
+  
+  #
+  Requiered-Permission: false
 #
-# | Sounds |
-# 
-#
-Sounds:
+#  
+Teleport:
+  
+  #
   Enabled: true
+  
+  #
+  Cooldown: 10
+  
+  #
+  Show-Menu: false
+  
+  #
+  Intective-Tp: false
+#
+#
+GameMode:
+  
+  #
+  Enabled-Custom-GameMode: true
+  
+  #
+  Survival:
+    
+    #
+    Enabled: true
+    
+    #
+    Message: ''
+
+  #
+  Creative:
+    
+    #
+    Enabled: true
+    
+    #
+    Message: ''
+  
+  #  
+  Adventure:
+    
+    #
+    Enabled: true
+    
+    #
+    Message: ''
+  
+  #  
+  Spectator:
+    
+    #
+    Enabled: true
+    
+    #
+    Message: '' 
+#
+#    
+Fly:
+  
+  #
+  Enabled: true
+  
+  #
+  Speed: 1.0
+  
+
 #
 # This is the end of the configuration ... [-_-] more things coming soon
 # 

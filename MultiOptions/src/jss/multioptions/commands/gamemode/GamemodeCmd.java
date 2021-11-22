@@ -1,4 +1,4 @@
-package jss.multioptions.commands;
+package jss.multioptions.commands.gamemode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,11 +12,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-@SuppressWarnings("unused")
+
 public class GamemodeCmd implements CommandExecutor, TabCompleter {
 
 	private MultiOptions plugin;
-	private EventUtils eventUtils = new EventUtils(plugin);
 
 	public GamemodeCmd(MultiOptions plugin) {
 		this.plugin = plugin;
@@ -36,9 +35,11 @@ public class GamemodeCmd implements CommandExecutor, TabCompleter {
 						return true;
 					}
 				}else{
+					//
 					return true;
 				}
 				
+				//
 				return true;
 			}
 			

@@ -1,24 +1,24 @@
-package jss.multioptions.commands;
+package jss.multioptions.commands.gamemode;
 
 import java.util.ArrayList;
 import java.util.List;
 import jss.multioptions.MultiOptions;
 import jss.multioptions.utils.EventUtils;
 import jss.multioptions.utils.Utils;
+
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 @SuppressWarnings("unused")
-public class GmC implements CommandExecutor, TabCompleter {
+public class GmS implements CommandExecutor, TabCompleter {
 
 	private MultiOptions plugin;
 	private EventUtils eventUtils = new EventUtils(plugin);
 
-	public GmC(MultiOptions plugin) {
+	public GmS(MultiOptions plugin) {
 		this.plugin = plugin;
 		plugin.getCommand("MGmS").setExecutor(this);
 		plugin.getCommand("MGmS").setTabCompleter(this);
